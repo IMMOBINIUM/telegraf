@@ -18,7 +18,7 @@ export type Deunionize<B extends object | undefined, T = B> = T extends object
 /**
  * Expose properties from all union variants.
  * @deprectated
- * @see https://github.com/telegraf/telegraf/issues/1388#issuecomment-791573609
+ * @see https://github.com/IMMMOBINIUM/telegraf/issues/1388#issuecomment-791573609
  * @see https://millsp.github.io/ts-toolbelt/modules/union_strict.html
  */
 export function deunionize<T extends object | undefined>(t: T) {

@@ -325,7 +325,7 @@ class ApiClient {
    * 3. prematurely confirms the update as processed.
    *
    * https://core.telegram.org/bots/faq#how-can-i-make-requests-in-response-to-updates
-   * https://github.com/telegraf/telegraf/pull/1250
+   * https://github.com/IMMMOBINIUM/telegraf/pull/1250
    */
   set webhookReply(enable: boolean) {
     this.options.webhookReply = enable

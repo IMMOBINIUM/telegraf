@@ -7,10 +7,10 @@
   "homepage": "https://telegraf.js.org",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/telegraf/telegraf.git"
+    "url": "git+ssh://git@github.com/IMMMOBINIUM/telegraf.git"
   },
   "bugs": {
-    "url": "https://github.com/telegraf/telegraf/issues"
+    "url": "https://github.com/IMMMOBINIUM/telegraf/issues"
   },
   "main": "lib/index.js",
   "exports": {
@@ -94,7 +94,7 @@
   },
   "types": "./typings/index.d.ts",
   "dependencies": {
-    "@telegraf/types": "^7.1.0",
+    "@telegraf/types": "github:IMMOBINIUM/telegraf-types",
     "abort-controller": "^3.0.0",
     "debug": "^4.3.5",
     "mri": "^1.2.0",

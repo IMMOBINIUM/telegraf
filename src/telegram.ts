@@ -460,14 +460,17 @@ export class Telegram extends ApiClient {
   sendPoll(
     chatId: number | string,
     question: string,
-    options: readonly string[],
+    options: readonly (string | tg.InputPollOption)[],
     extra?: tt.ExtraPoll
   ) {
+    const normalizedOptions = options.map((option) =>
+      typeof option === 'string' ? { text: option } : option
+    )
     return this.callApi('sendPoll', {
       chat_id: chatId,
       type: 'regular',
       question,
-      options,
+      options: normalizedOptions,
       ...extra,
     })
   }
@@ -481,14 +484,17 @@ export class Telegram extends ApiClient {
   sendQuiz(
     chatId: number | string,
     question: string,
-    options: readonly string[],
+    options: readonly (string | tg.InputPollOption)[],
     extra?: tt.ExtraPoll
   ) {
+    const normalizedOptions = options.map((option) =>
+      typeof option === 'string' ? { text: option } : option
+    )
     return this.callApi('sendPoll', {
       chat_id: chatId,
       type: 'quiz',
       question,
-      options,
+      options: normalizedOptions,
       ...extra,
     })
   }
@@ -864,13 +870,22 @@ export class Telegram extends ApiClient {
     extra?: tt.ExtraEditMessageText
   ) {
     const t = FmtString.normalise(text)
-    return this.callApi('editMessageText', {
-      chat_id: chatId,
-      message_id: messageId,
-      inline_message_id: inlineMessageId,
-      ...extra,
-      ...t,
-    })
+    const payload = inlineMessageId
+      ? {
+          inline_message_id: inlineMessageId,
+          ...extra,
+          ...t,
+        }
+      : {
+          chat_id: chatId!,
+          message_id: messageId!,
+          ...extra,
+          ...t,
+        }
+    return this.callApi(
+      'editMessageText',
+      payload as tg.Opts<'editMessageText'>
+    )
   }
 
   /**
@@ -1315,12 +1330,14 @@ export class Telegram extends ApiClient {
   setStickerSetThumbnail(
     name: string,
     userId: number,
-    thumbnail?: tg.Opts<'setStickerSetThumbnail'>['thumbnail']
+    thumbnail?: tg.Opts<'setStickerSetThumbnail'>['thumbnail'],
+    format: tg.Opts<'setStickerSetThumbnail'>['format'] = 'static'
   ) {
     return this.callApi('setStickerSetThumbnail', {
       name,
       user_id: userId,
       thumbnail,
+      format,
     })
   }
 

@@ -12,7 +12,7 @@
 <a href="https://packagephobia.com/result?p=telegraf,node-telegram-bot-api">
 	<img src="https://flat.badgen.net/packagephobia/install/telegraf" alt="install size" />
 </a>
-<a href="https://github.com/telegraf/telegraf">
+<a href="https://github.com/IMMMOBINIUM/telegraf">
 	<img src="https://img.shields.io/github/languages/top/telegraf/telegraf?style=flat-square&logo=github" alt="GitHub top language" />
 </a>
 <a href="https://telegram.me/TelegrafJSChat">
@@ -25,7 +25,7 @@
 ## For 3.x users
 
 - [3.x docs](https://telegraf.js.org/v3)
-- [4.0 release notes](https://github.com/telegraf/telegraf/releases/tag/v4.0.0)
+- [4.0 release notes](https://github.com/IMMMOBINIUM/telegraf/releases/tag/v4.0.0)
 
 ## Introduction
 
@@ -38,7 +38,7 @@ Telegraf is a library that makes it simple for you to develop your own Telegram 
 ### Features
 
 - Full [Telegram Bot API 7.1](https://core.telegram.org/bots/api) support
-- [Excellent TypeScript typings](https://github.com/telegraf/telegraf/releases/tag/v4.0.0)
+- [Excellent TypeScript typings](https://github.com/IMMMOBINIUM/telegraf/releases/tag/v4.0.0)
 - [Lightweight](https://packagephobia.com/result?p=telegraf,node-telegram-bot-api)
 - [AWS **λ**](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html)
   / [Firebase](https://firebase.google.com/products/functions/)
@@ -90,7 +90,7 @@ For additional bot examples see the new [`docs repo`](https://github.com/feather
   - [Russian](https://t.me/telegrafjs_ru)
   - [Uzbek](https://t.me/botjs_uz)
   - [Ethiopian](https://t.me/telegraf_et)
-- [GitHub Discussions](https://github.com/telegraf/telegraf/discussions)
+- [GitHub Discussions](https://github.com/IMMMOBINIUM/telegraf/discussions)
 - [Dependent repositories](https://libraries.io/npm/telegraf/dependent_repositories)
 
 ## Getting started
@@ -142,18 +142,18 @@ Here is a list of
 
 #### Known middleware
 
-- [Internationalization](https://github.com/telegraf/telegraf-i18n)—simplifies selecting the right translation to use when responding to a user.
-- [Redis powered session](https://github.com/telegraf/telegraf-session-redis)—store session data using Redis.
+- [Internationalization](https://github.com/IMMMOBINIUM/telegraf-i18n)—simplifies selecting the right translation to use when responding to a user.
+- [Redis powered session](https://github.com/IMMMOBINIUM/telegraf-session-redis)—store session data using Redis.
 - [Local powered session (via lowdb)](https://github.com/RealSpeaker/telegraf-session-local)—store session data in a local file.
-- [Rate-limiting](https://github.com/telegraf/telegraf-ratelimit)—apply rate limitting to chats or users.
+- [Rate-limiting](https://github.com/IMMMOBINIUM/telegraf-ratelimit)—apply rate limitting to chats or users.
 - [Bottleneck powered throttling](https://github.com/KnightNiwrem/telegraf-throttler)—apply throttling to both incoming updates and outgoing API calls.
 - [Menus via inline keyboards](https://github.com/EdJoPaTo/telegraf-inline-menu)—simplify creating interfaces based on menus.
 - [Stateless Questions](https://github.com/EdJoPaTo/telegraf-stateless-question)—create stateless questions to Telegram users working in privacy mode.
-- [Natural language processing via wit.ai](https://github.com/telegraf/telegraf-wit)
-- [Natural language processing via recast.ai](https://github.com/telegraf/telegraf-recast)
-- [Multivariate and A/B testing](https://github.com/telegraf/telegraf-experiments)—add experiments to see how different versions of a feature are used.
-- [Powerfull bot stats via Mixpanel](https://github.com/telegraf/telegraf-mixpanel)
-- [statsd integration](https://github.com/telegraf/telegraf-statsd)
+- [Natural language processing via wit.ai](https://github.com/IMMMOBINIUM/telegraf-wit)
+- [Natural language processing via recast.ai](https://github.com/IMMMOBINIUM/telegraf-recast)
+- [Multivariate and A/B testing](https://github.com/IMMMOBINIUM/telegraf-experiments)—add experiments to see how different versions of a feature are used.
+- [Powerfull bot stats via Mixpanel](https://github.com/IMMMOBINIUM/telegraf-mixpanel)
+- [statsd integration](https://github.com/IMMMOBINIUM/telegraf-statsd)
 - [and more...](https://www.npmjs.com/search?q=telegraf-)
 -->
 
@@ -347,7 +347,7 @@ With this simple ability, you can:
 - extract information from updates and then `await next()` to avoid disrupting other middleware,
 - like [`Composer`] and [`Router`], `await next()` for updates you don't wish to handle,
 - like [`session`] and [`Scenes`], [extend the context](#extending-context) by mutating `ctx` before `await next()`,
-- [intercept API calls](https://github.com/telegraf/telegraf/discussions/1267#discussioncomment-254525),
+- [intercept API calls](https://github.com/IMMMOBINIUM/telegraf/discussions/1267#discussioncomment-254525),
 - reuse [other people's code](https://www.npmjs.com/search?q=telegraf-),
 - do whatever **you** come up with!
 

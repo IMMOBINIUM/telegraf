@@ -856,7 +856,11 @@ export class Context<U extends Deunionize<tg.Update> = tg.Update> {
   /**
    * @see https://core.telegram.org/bots/api#sendpoll
    */
-  sendPoll(poll: string, options: readonly string[], extra?: tt.ExtraPoll) {
+  sendPoll(
+    poll: string,
+    options: readonly (string | tg.InputPollOption)[],
+    extra?: tt.ExtraPoll
+  ) {
     this.assert(this.chat, 'sendPoll')
     return this.telegram.sendPoll(this.chat.id, poll, options, {
       message_thread_id: getThreadId(this),
@@ -874,7 +878,11 @@ export class Context<U extends Deunionize<tg.Update> = tg.Update> {
   /**
    * @see https://core.telegram.org/bots/api#sendpoll
    */
-  sendQuiz(quiz: string, options: readonly string[], extra?: tt.ExtraPoll) {
+  sendQuiz(
+    quiz: string,
+    options: readonly (string | tg.InputPollOption)[],
+    extra?: tt.ExtraPoll
+  ) {
     this.assert(this.chat, 'sendQuiz')
     return this.telegram.sendQuiz(this.chat.id, quiz, options, {
       message_thread_id: getThreadId(this),

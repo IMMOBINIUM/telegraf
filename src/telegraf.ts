@@ -268,7 +268,7 @@ export class Telegraf<C extends Context = Context> extends Composer<C> {
     onLaunch?: () => void
   ): Promise<void>
   /**
-   * @see https://github.com/telegraf/telegraf/discussions/1344#discussioncomment-335700
+   * @see https://github.com/IMMMOBINIUM/telegraf/discussions/1344#discussioncomment-335700
    */
   async launch(
     config: Telegraf.LaunchOptions | (() => void) = {},
@@ -316,7 +316,7 @@ export class Telegraf<C extends Context = Context> extends Composer<C> {
 
   stop(reason = 'unspecified') {
     debug('Stopping bot... Reason:', reason)
-    // https://github.com/telegraf/telegraf/pull/1224#issuecomment-742693770
+    // https://github.com/IMMMOBINIUM/telegraf/pull/1224#issuecomment-742693770
     if (this.polling === undefined && this.webhookServer === undefined) {
       throw new Error('Bot is not running!')
     }

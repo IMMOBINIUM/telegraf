@@ -14,7 +14,8 @@ type ReactionCtx = { update: Partial<tg.Update.MessageReactionUpdate> }
 const inspectReaction = (reaction: tg.ReactionType) => {
   if (reaction.type === 'custom_emoji')
     return `Custom(${reaction.custom_emoji_id})`
-  else return reaction.emoji
+  if (reaction.type === 'emoji') return reaction.emoji
+  return 'Paid'
 }
 
 export class ReactionList {
@@ -33,20 +34,24 @@ export class ReactionList {
   }
 
   static has(reactions: tg.ReactionType[], reaction: Reaction): boolean {
-    if (typeof reaction === 'string')
+    if (typeof reaction === 'string') {
       if (Digit.has(reaction[0] as string))
         return reactions.some(
-          (r: Deunionize<tg.ReactionType>) => r.custom_emoji_id === reaction
+          (r: Deunionize<tg.ReactionType>) =>
+            r.type === 'custom_emoji' && r.custom_emoji_id === reaction
         )
-      else
-        return reactions.some(
-          (r: Deunionize<tg.ReactionType>) => r.emoji === reaction
-        )
+      return reactions.some(
+        (r: Deunionize<tg.ReactionType>) =>
+          r.type === 'emoji' && r.emoji === reaction
+      )
+    }
 
     return reactions.some((r: Deunionize<tg.ReactionType>) => {
+      if (reaction.type === 'paid') return r.type === 'paid'
       if (r.type === 'custom_emoji')
         return r.custom_emoji_id === reaction.custom_emoji_id
-      else if (r.type === 'emoji') return r.emoji === reaction.emoji
+      if (r.type === 'emoji') return r.emoji === reaction.emoji
+      return false
     })
   }
 

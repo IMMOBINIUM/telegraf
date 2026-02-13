@@ -62,7 +62,7 @@ export function session<
   const concurrents = new Map<string, MaybePromise<S | undefined>>()
 
   // this function must be handled with care
-  // read full description on the original PR: https://github.com/telegraf/telegraf/pull/1713
+  // read full description on the original PR: https://github.com/IMMMOBINIUM/telegraf/pull/1713
   // make sure to update the tests in test/session.js if you make any changes or fix bugs here
   return async (ctx, next) => {
     const updId = ctx.update.update_id
